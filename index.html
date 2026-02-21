@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanjid Math Circle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #16325c;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="loginPanel">
+    <h2>Tanjid Math Circle</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+    <p id="message" style="color:red;"></p>
+</div>
+
+<div class="container hidden" id="dashboard">
+    <h2>Login Success ✅</h2>
+
+    <h3>Higher Mathematics 1st Paper</h3>
+    <ul>
+        <li>Matrix and Determinant</li>
+        <li>Vector</li>
+        <li>Straight Line</li>
+        <li>Circle</li>
+        <li>Permutation and Combination</li>
+        <li>Trigonometric Ratios & Identities</li>
+        <li>Inverse Trigonometric Functions</li>
+        <li>Complex Number</li>
+    </ul>
+
+    <h3>Higher Mathematics 2nd Paper</h3>
+    <ul>
+        <li>Limits and Continuity</li>
+        <li>Differentiation</li>
+        <li>Application of Differentiation</li>
+        <li>Integration</li>
+        <li>Application of Integration</li>
+        <li>Differential Equation</li>
+        <li>Statics</li>
+        <li>Plane Motion</li>
+    </ul>
+</div>
+
+<script>
+    function login() {
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        if(user === "Tanjid" && pass === "tanjid000") {
+            document.getElementById("loginPanel").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+        } else {
+            document.getElementById("message").innerText = "Incorrect Username or Password!";
+        }
+    }
+</script>
+
+</body>
+</html>
